@@ -15,7 +15,7 @@ if midi_file == "":
     midi_file = "The_Cars_-_You_Might_Think.mid"
 
 pin = input("Which is the output pin?\n")
-song = mido.MidiFile(midi_file)
+song = mido.MidiFile(str(midi_file + ".mid"))
 
 #Go through midi file
 
@@ -41,9 +41,9 @@ print(music)
 def FinalFile(music):
     loop = []
     #Start bit of code
-    code = "void setup(){ \n    //Setup code goes here \n   pinMode(" + \
+    code = "void setup(){ \n    //Setup code goes here \n    pinMode(" + \
            pin + \
-           "OUTPUT)\n}" +\
+           ", OUTPUT);\n    }\n" +\
            "void loop(){ \n    //Repeated code goes here\n"
 
     #Create and add middle bit of code
@@ -55,11 +55,17 @@ def FinalFile(music):
         #If vel isn't zero play a sound
         #tone(pin, frequency, duration)
         else:
+            #For arduino
             code_line = "    tone(" + str(pin) + ", " + str(i[0]) + ", " + str(i[1]) + "); \n"
+            #For windows
+            code_line = "    beep(" + str(i[0]) + ", " + str(i[1]) + "); \n"
         code = code + str(code_line)
 
     #Finish code
     code = code + "}"
+
+    file = str(midi_file + ".cpp")
+    open(file, "w").write(code)
     return code
 
 print(FinalFile(music))

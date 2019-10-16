@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ca5b5eb-1443-4e4b-a947-122e5a6041d8" name="Default Changelist" comment="Initial">
-      <change afterPath="$PROJECT_DIR$/ELO - Do ya.mid" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/The Cars - You might think.mid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Midi_to_Cplusplus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Midi_to_Cplusplus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0ca5b5eb-1443-4e4b-a947-122e5a6041d8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ELO - do ya.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -36,12 +31,6 @@
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="816" />
-    <option name="height" value="576" />
   </component>
   <component name="ProjectId" id="1SIuvOCWkWNV1EK6XxXI2aU5An7" />
   <component name="ProjectLevelVcsManager">
@@ -117,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571239406632</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creates code from midi file. Needs testing">
+      <created>1571266602892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571266602893</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -140,7 +136,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial" />
+    <MESSAGE value="Creates code from midi file. Needs testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creates code from midi file. Needs testing" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Midi_to_Cplusplus$main.coverage" NAME="main Coverage Results" MODIFIED="1571242647378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
