@@ -1,5 +1,4 @@
 import mido
-import FinalFile
 import os
 
 dir_path = os.path.dirname(os.path.abspath(__file__))
@@ -62,4 +61,23 @@ def get_pin():
         print("Please enter an integer value")
         return get_pin()
 
+def get_track_wanted(song):
+    """Ask which track is wanted"""
+    try:
+        track_wanted = int(input("Which numerical track do you want?\n"))
+        return track_wanted, max_track
+    except ValueError:
+        print("Please only input integer track numbers")
+        return get_track_wanted()
 
+def get_max_track(song):
+    # Print track options
+    max_track = 0
+    for i, track in enumerate(song.tracks):
+        # What the track has on it. eg guitar
+        track_info = str(song.tracks[i]).split("\'")
+        print("Track", i, track_info[1])
+        print(track_info[2].strip()[:-1])
+        if int(i) > int(max_track):
+            max_track = int(i)
+    return max_track

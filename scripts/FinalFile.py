@@ -1,12 +1,34 @@
 import os
 
-def FinalFile(music, oper_sys, track_wanted):
+# Go through midi file (song) and add the notes to music[]
+def enumerate_song(track_wanted, song):
+    """"Parses song and returns info on the track_wanted"""
+    music = []
+    for i, track in enumerate(song.tracks):
+        print("Enumerating through track:", i)
+        if str(i) == str(track_wanted):
+            for x in track:
+                message = str(x).split()
+                value = message[2]
+                # Return the value along with the frequency
+                if str(value[:5]) == "note=":
+                    freq = 440 * 2 ** ((int(value[5:]) - 69) / 12)
+                    freq = round(freq)
+                    time = message[4][5:]
+                    vel = message[3][9:]
+                    # print("Frequency:", freq,"\nTime:", time, "\nVel:", vel, "\n")
+                    note = [freq, int(time), int(vel)]
+                    music.append(note)
+    return music
+
+
+def FinalFile(music, oper_sys, track_wanted, midi_file):
     """Creates the .c file for either windows or arduino"""
-    enumerate_songs(track_wanted)
+    enumerate_song(track_wanted)
     loop = []
     # Start bit of code
     # Arduino or windows?
-    if oper_sys.upper == "ARDUINO":
+    if oper_sys.upper() == "ARDUINO":
         # Setup code for an arduino
         code = "void setup(){ \n    //Setup code goes here \n    pinMode(" + \
                pin + \
@@ -65,3 +87,4 @@ def FinalFile(music, oper_sys, track_wanted):
         create_exe = str("gcc \"" + midi_file + " - " + oper_sys.upper() + str(track_wanted) + "\" \"" + file_name + "\"")
         print(create_exe)
         os.system(create_exe)
+
