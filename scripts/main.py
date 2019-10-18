@@ -10,7 +10,7 @@ from inputs import *
 
 # https://www.arduino.cc/reference/en/
 # Arduino code
-
+get_oper_sys()
 song = get_midi_file()
 multi_tracks = get_multi_tracks()
 

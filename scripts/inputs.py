@@ -43,11 +43,15 @@ def get_multi_tracks():
 
 #GO BACK AND EDIT
 def get_oper_sys():
-    print(os.name)
     """Check whether for arduino or windows"""
-    oper_sys = input("Arduino or no?\n")
-    return oper_sys
-
+    oper_sys = input("Will this be run on an Arduino or Windows Machine? Ard or Win\n")
+    if oper_sys.upper() == "WIN" or oper_sys.upper() == "WINDOWS":
+        return "WINDOWS"
+    elif oper_sys.upper() == "ARD" or oper_sys.upper() == "ARDUINO":
+        return "ARDUINO"
+    else:
+        print("Did not recognise given platform. Please input either \"Ard\" or \"Win\"")
+        get_oper_sys()
 
 def get_pin():
     """Ask which is the output pin for arduino"""
