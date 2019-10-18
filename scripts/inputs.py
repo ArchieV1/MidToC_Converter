@@ -55,7 +55,11 @@ def get_oper_sys():
 
 def get_pin():
     """Ask which is the output pin for arduino"""
-    pin = input("Which is the output pin?\n")
-    return  pin
+    try:
+        pin = int(input("Which is the output pin?\n"))
+        return pin
+    except ValueError:
+        print("Please enter an integer value")
+        return get_pin()
 
 

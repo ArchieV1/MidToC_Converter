@@ -10,9 +10,14 @@ from inputs import *
 
 # https://www.arduino.cc/reference/en/
 # Arduino code
-print(get_oper_sys())
+
+# Inputs
+get_pin()
 song = get_midi_file()
 multi_tracks = get_multi_tracks()
+oper_sys = get_oper_sys()
+if oper_sys == "ARDUINO":
+    pin = get_pin()
 
 # Control rest of code from here
 if multi_tracks == False:
