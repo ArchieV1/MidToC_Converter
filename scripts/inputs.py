@@ -7,7 +7,7 @@ parent_path = os.path.dirname(dir_path)
 
 
 def get_midi_file():
-    """Get the name of the input file. Returns """
+    """Get the name of the input file. Returns mido.midifiles.midifiles.MidiFile"""
     midi_file = str(parent_path + "\\" + input("Link to midi file\nFile should be in source root\n"))
     # Set default midi file
     if midi_file == str(parent_path + "\\"):
@@ -43,6 +43,7 @@ def get_multi_tracks():
 
 #GO BACK AND EDIT
 def get_oper_sys():
+    print(os.name)
     """Check whether for arduino or windows"""
     oper_sys = input("Arduino or no?\n")
     return oper_sys

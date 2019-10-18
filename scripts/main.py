@@ -11,7 +11,7 @@ from inputs import *
 # https://www.arduino.cc/reference/en/
 # Arduino code
 
-get_midi_file()
+song = get_midi_file()
 multi_tracks = get_multi_tracks()
 
 # Control rest of code from here
