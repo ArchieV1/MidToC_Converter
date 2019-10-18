@@ -51,7 +51,7 @@ def get_oper_sys():
         return "ARDUINO"
     else:
         print("Did not recognise given platform. Please input either \"Ard\" or \"Win\"")
-        get_oper_sys()
+        return get_oper_sys()
 
 def get_pin():
     """Ask which is the output pin for arduino"""
