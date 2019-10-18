@@ -1,2 +1,5 @@
-/ELO - do ya
-__pycache__/
+# Ignore ELO folder
+ELO - do ya/
+
+# Ignore test .mid files
+*.mid

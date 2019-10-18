@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ca5b5eb-1443-4e4b-a947-122e5a6041d8" name="Default Changelist" comment="Moved scripts to /scripts&#10;Moved functions to new files&#10;Created inputs.py&#10;Created FinalFile.py&#10;Error checking to get_multi_tracks()&#10;Error checking to get_midi_file()">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ELO - do ya/ELO - do ya - WINDOWS0.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ELO - do ya/ELO - do ya/ELO - do ya - WINDOWS1.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ELO - do ya/ELO - do ya/ELO - do ya - WINDOWS2.c" afterDir="false" />
@@ -12,9 +11,7 @@
       <change afterPath="$PROJECT_DIR$/ELO - do ya/ELO - do ya/ELO - do ya - WINDOWS6.c" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Foreigner - Cold As Ice.mid" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Psy - Gangnam Style.mid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/inputs.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/inputs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571437262999</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improved comments&#10;get song var in main.py">
+      <created>1571438771423</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571438771423</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -245,7 +249,8 @@
     <MESSAGE value="Needs testing. Added windows options and an example .cpp" />
     <MESSAGE value="Added batch convert tracks&#10;Added most framework for converting to .exe from .c&#10;Changed to .c from .cpp&#10;Added windows vs arduino options&#10;Added track selection&#10;Expanded FinalFile()&#10;Changed default song to &quot;ELO - Do Ya&quot;" />
     <MESSAGE value="Moved scripts to /scripts&#10;Moved functions to new files&#10;Created inputs.py&#10;Created FinalFile.py&#10;Error checking to get_multi_tracks()&#10;Error checking to get_midi_file()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved scripts to /scripts&#10;Moved functions to new files&#10;Created inputs.py&#10;Created FinalFile.py&#10;Error checking to get_multi_tracks()&#10;Error checking to get_midi_file()" />
+    <MESSAGE value="Improved comments&#10;get song var in main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved comments&#10;get song var in main.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Midi_to_Cplusplus$main.coverage" NAME="main Coverage Results" MODIFIED="1571242647378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
