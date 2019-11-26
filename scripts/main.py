@@ -22,6 +22,7 @@ midi_file_name = midi_file_full[1]
 # Returns if multi track or not and if it is which track to use
 multi_tracks = get_multi_tracks()
 
+# Get the OS and if it's arduino ask for pin number
 oper_sys = get_oper_sys()
 if oper_sys == "ARDUINO":
     pin = get_pin()
@@ -29,7 +30,18 @@ else:
     pin = None
 
 # Create the final file with either 1 track or many
-if multi_tracks == False:
+if multi_tracks:
+    # Returns how many tracks there are
+    max_track = get_max_track(midi_file)
+
+    # Create a file for each track.
+    # So a file with 6 tracks (With notes) will create 6 files
+    for track in range(max_track):
+        # Create a list of notes to create music
+        music = enumerate_song(max_track, midi_file)
+        create_file(music, track, midi_file_name, oper_sys, pin)
+
+else:
     # Returns which track is wanted
     get_track_wanted = get_track_wanted()
     track_wanted = get_track_wanted
@@ -37,13 +49,4 @@ if multi_tracks == False:
     # Create a list of notes to create music
     music = enumerate_song(track_wanted, midi_file)
     # Created the final file using that track
-    FinalFile(music, track_wanted, midi_file_name, oper_sys)
-
-else:
-    # Returns which track is wanted
-    max_track = get_max_track(midi_file)
-    for track in range(max_track):
-        music = enumerate_song(max_track, midi_file)
-        FinalFile(music, track, midi_file_name, oper_sys)
-
-
+    create_file(music, track_wanted, midi_file_name, oper_sys, pin)
