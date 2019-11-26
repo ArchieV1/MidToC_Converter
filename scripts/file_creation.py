@@ -45,15 +45,7 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     :param pin: The pin for arduinos
     :return: None. Creates the .h files
     """
-    # Not used anywhere??/
-    #
-    #enumerate_song(track_wanted, song)
-    #loop = []
-    #
-
-    # Returns if windows or arduino
-
-
+    
     # Start bit of code
     # Arduino or windows?
     if oper_sys.upper() == "ARDUINO":
