@@ -35,7 +35,7 @@ def enumerate_song(track_wanted, song):
     return music
 
 
-def FinalFile(music, track_wanted, midi_file_name, oper_sys):
+def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     """
     Creates the .c file for either windows or arduino
     :param music: List of notes with timings and velocity (From enumerate_song)
