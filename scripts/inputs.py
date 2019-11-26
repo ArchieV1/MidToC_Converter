@@ -7,21 +7,24 @@ parent_path = os.path.dirname(dir_path)
 
 def get_midi_file():
     """Get the name of the input file. Returns mido.midifiles.midifiles.MidiFile"""
-    midi_file = str(parent_path + "\\" + input("Link to midi file\nFile should be in source root\n"))
+    midi_file_name = str(parent_path + "\\" + input("Link to midi file\nFile should be in source root\n"))
     # Set default midi file
-    if midi_file == str(parent_path + "\\"):
-        midi_file = str(parent_path + "\\ELO - do ya.mid")
+    if midi_file_name == str(parent_path + "\\"):
+        midi_file_path = str(parent_path + "\\ELO - do ya.mid")
     # Determine if .mid needs appending or not
     try:
-        if midi_file.upper()[-4:] == ".MID":
-            song = mido.MidiFile(midi_file.upper())
-            print("Loaded:\n" + midi_file + "\n")
-            return song
+        if midi_file_path.upper()[-4:] == ".MID":
+            song = mido.MidiFile(midi_file_path.upper())
+            print("Loaded:\n" + midi_file_path + "\n")
+
         else:
-            song = mido.MidiFile(str(midi_file.upper() + ".MID"))
-            print("Loaded:\n" + midi_file + ".mid\n")
-            return song
-    except:
+            song = mido.MidiFile(str(midi_file_path.upper() + ".MID"))
+            print("Loaded:\n" + midi_file_path + ".mid\n")
+
+        # Just return the name of the midi file not the path
+        return song, midi_file_path.split("\\")[-1]
+
+    except AssertionError:
         print("Failed to find midi file\n"
               "Please input the exact name (Case does not matter)")
         get_midi_file()
@@ -52,6 +55,7 @@ def get_oper_sys():
         print("Did not recognise given platform. Please input either \"Ard\" or \"Win\"")
         return get_oper_sys()
 
+
 def get_pin():
     """Ask which is the output pin for arduino"""
     try:
@@ -61,14 +65,16 @@ def get_pin():
         print("Please enter an integer value")
         return get_pin()
 
-def get_track_wanted(song):
+
+def get_track_wanted():
     """Ask which track is wanted"""
     try:
         track_wanted = int(input("Which numerical track do you want?\n"))
-        return track_wanted, max_track
+        return track_wanted
     except ValueError:
         print("Please only input integer track numbers")
         return get_track_wanted()
+
 
 def get_max_track(song):
     # Print track options
