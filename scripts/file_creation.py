@@ -1,4 +1,5 @@
 from scripts.inputs import *
+from mido import tick2second
 
 
 # Go through midi file (song) and add the notes to music[]
@@ -24,7 +25,11 @@ def enumerate_song(track_wanted, song):
                     freq = round(freq)
 
                     # Make time an int
-                    time = int(message[4][5:])
+                    time = message[4][5:]
+                    print(time)
+                    # Change ticks to seconds with a tempo of 500000 (120BMP)
+                    time = tick2second(int(time), int(song.ticks_per_beat), 500000)
+                    print(time)
 
                     # Make vel an int
                     vel = int(message[3][9:])
