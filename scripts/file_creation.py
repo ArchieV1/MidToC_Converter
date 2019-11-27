@@ -58,7 +58,7 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
         # Setup code for windows
         code = "//Import windows stuff \n" \
                "#include <stdio.h> \n" \
-               "#include <windows.h>\n" \
+               "#include <Windows.h>\n" \
                "void main();\n" \
                "void main(){\n"
 
@@ -99,6 +99,7 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     # Example line:
     # MidToC_Converter\ELO - do ya.mid\ELO - do ya.mid - WINDOWS6.c
     file_name = midi_file_name + "\\" + midi_file_name + " - " + oper_sys.upper() + str(track_wanted) + ".c"
+    print(code)
     open(file_name, "w").write(code)
 
 
@@ -113,8 +114,9 @@ def create_exes(directory_path):
         print("Converting: " + file_name)
         # Example command
         # gcc -o "ELO - do ya.mid - WINDOWS6.exe" "ELO - do ya.mid - WINDOWS6.c"
-        exe_name = file_name.split(".")[0] + file_name.split(".")[1] + ".exe"
-        create_exe = "gcc \"{}\" \"{}\"".format(exe_name, file_name)
+        exe_name = file_name.replace(".mid", "mid").split(".")[0] + ".exe"
+        # -o (Output) NEWFILENAME
+        create_exe = "gcc -o \"{}\" \"{}\"".format(exe_name, file_name)
         print(create_exe)
-        # os.system(create_exe)
+        os.system(create_exe)
 
