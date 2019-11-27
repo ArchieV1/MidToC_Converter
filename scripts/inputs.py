@@ -11,6 +11,8 @@ def get_midi_file():
     # Set default midi file
     if midi_file_name == str(parent_path + "\\"):
         midi_file_path = str(parent_path + "\\ELO - do ya.mid")
+    else:
+        midi_file_path = midi_file_name
     # Determine if .mid needs appending or not
     try:
         if midi_file_path.upper()[-4:] == ".MID":
