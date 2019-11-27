@@ -28,7 +28,9 @@ def enumerate_song(track_wanted, song):
                     time = message[4][5:]
                     print(time)
                     # Change ticks to seconds with a tempo of 500000 (120BMP)
-                    time = tick2second(int(time), int(song.ticks_per_beat), 500000)
+                    # tempo = 500000
+                    tempo = (1/125)*60*10**6
+                    time = tick2second(int(time), int(song.ticks_per_beat), tempo)
                     print(time)
 
                     # Make vel an int
@@ -99,6 +101,7 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     # If the folder doesn't exist create it
     if os.path.exists(midi_file_name) == False:
         os.mkdir(midi_file_name)
+        print("Directory created")
 
     # Create the file name in write mode.
     # Example line:
@@ -122,4 +125,6 @@ def create_exes(directory_path):
         # -o (Output) NEWFILENAME
         create_exe = "gcc -o \"{}\" \"{}\"".format(exe_name, file_name)
         os.system(create_exe)
+        print(f"{exe_name} created\n")
+
 
