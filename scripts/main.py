@@ -50,3 +50,7 @@ else:
     music = enumerate_song(track_wanted, midi_file)
     # Created the final file using that track
     create_file(music, track_wanted, midi_file_name, oper_sys, pin)
+
+# Create the exes
+directory_path = os.path.dirname(os.path.realpath(__file__)) + "\\" + midi_file_name
+create_exes(directory_path)
