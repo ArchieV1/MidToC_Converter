@@ -38,7 +38,7 @@ if multi_tracks:
     # So a file with 6 tracks (With notes) will create 6 files
     for track in range(max_track):
         # Create a list of notes to create music
-        music = enumerate_song(max_track, midi_file)
+        music = enumerate_song(track, midi_file)
         create_file(music, track, midi_file_name, oper_sys, pin)
 
 else:
