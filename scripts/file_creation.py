@@ -99,7 +99,6 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     # Example line:
     # MidToC_Converter\ELO - do ya.mid\ELO - do ya.mid - WINDOWS6.c
     file_name = midi_file_name + "\\" + midi_file_name + " - " + oper_sys.upper() + str(track_wanted) + ".c"
-    print(code)
     open(file_name, "w").write(code)
 
 
