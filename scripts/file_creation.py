@@ -117,6 +117,5 @@ def create_exes(directory_path):
         exe_name = file_name.replace(".mid", "mid").split(".")[0] + ".exe"
         # -o (Output) NEWFILENAME
         create_exe = "gcc -o \"{}\" \"{}\"".format(exe_name, file_name)
-        print(create_exe)
         os.system(create_exe)
 

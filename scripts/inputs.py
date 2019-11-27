@@ -43,7 +43,6 @@ def get_multi_tracks():
     return multi_tracks
 
 
-#GO BACK AND EDIT
 def get_oper_sys():
     """Check whether for arduino or windows"""
     oper_sys = input("Will this be run on an Arduino or Windows Machine? Ard or Win\n")
