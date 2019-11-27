@@ -45,7 +45,7 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     :param pin: The pin for arduinos
     :return: None. Creates the .h files
     """
-    
+
     # Start bit of code
     # Arduino or windows?
     if oper_sys.upper() == "ARDUINO":
@@ -58,11 +58,9 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
         # Setup code for windows
         code = "//Import windows stuff \n" \
                "#include <stdio.h> \n" \
-               "#include <stdlib.h>\n" \
                "#include <windows.h>\n" \
-               "#include <dos.h>\n\n" \
-               "main();\n" \
-               "main(){\n"
+               "void main();\n" \
+               "void main(){\n"
 
     # Create and add middle bit of code
     for i in music:
@@ -100,18 +98,23 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
     # Create the file name in write mode.
     # Example line:
     # MidToC_Converter\ELO - do ya.mid\ELO - do ya.mid - WINDOWS6.c
-    open(str(midi_file_name + "\\" +
-             midi_file_name + " - " + oper_sys.upper() + str(track_wanted) + ".c"), "w").write(code)
+    file_name = midi_file_name + "\\" + midi_file_name + " - " + oper_sys.upper() + str(track_wanted) + ".c"
+    open(file_name, "w").write(code)
 
+
+def create_exes(directory_path):
     # Try and compile C programs
-    # # CD to right dir
-    # dir_path = os.path.dirname(os.path.realpath(__file__)) + "\\" + midi_file
-    # os.chdir(dir_path)
-    #
-    # # Enumerate through all of the created .c files and convert them to .exe and delete the .c files
-    # for file_name in os.listdir(dir_path):
-    #     print("Converting:" + file_name)
-    #     create_exe = str("gcc \"" + midi_file + " - " + oper_sys.upper() + str(track_wanted) + "\" \"" + file_name + "\"")
-    #     print(create_exe)
-    #     os.system(create_exe)
+    # CD to right dir
+
+    os.chdir(directory_path)
+
+    # Enumerate through all of the created .c files and convert them to .exe and delete the .c files
+    for file_name in os.listdir(directory_path):
+        print("Converting: " + file_name)
+        # Example command
+        # gcc -o "ELO - do ya.mid - WINDOWS6.exe" "ELO - do ya.mid - WINDOWS6.c"
+        exe_name = file_name.split(".")[0] + file_name.split(".")[1] + ".exe"
+        create_exe = "gcc \"{}\" \"{}\"".format(exe_name, file_name)
+        print(create_exe)
+        # os.system(create_exe)
 
