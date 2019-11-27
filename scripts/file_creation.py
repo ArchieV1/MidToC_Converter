@@ -81,10 +81,10 @@ def create_file(music, track_wanted, midi_file_name, oper_sys, pin):
         else:
             if oper_sys.upper() == "ARDUINO":
                 # For arduino
-                code_line = "    tone(" + str(pin) + ", " + str(i[0]) + ", " + str(i[1]) + "); \n"
+                code_line = "    tone(" + str(pin) + ", " + str(round(float(i[0]*1000))) + ", " + str(i[1]) + "); \n"
             else:
                 # For windows
-                code_line = "    Beep(" + str(i[0]) + ", " + str(i[1]) + "); \n    printf(\"NOTE\");\n"
+                code_line = "    Beep(" + str(i[0]) + ", " + str(round(float(i[1]*1000))) + "); \n    printf(\"NOTE\");\n"
         # Append to the long "code" variable that will written to the .c file
         code = code + str(code_line)
 
