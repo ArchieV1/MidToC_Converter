@@ -1,5 +1,6 @@
-# Ignore ELO folder
+# Ignore ELO - do ya folder
 ELO - do ya/
+.idea/
 
 # Ignore test .mid files
 *.mid
